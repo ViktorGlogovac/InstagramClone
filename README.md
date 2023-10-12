@@ -15,29 +15,48 @@
   </a>
 </p>
 
+# Instagram Clone
+
+![Instagram Clone Logo](./IgHeaderLogo.png)
+
+## Table of Contents
+
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+
+## Features
+
+- **User Authentication**: Sign up, log in, and log out.
+- **Post Images**: Users can post images with captions.
+- **Feed**: View recent posts from followed users.
+- **Comments & Likes**: Comment on and like posts.
+
 ## 🚀 How to use
 
-- Install packages with `yarn` or `npm install`.
-  - If you have native iOS code run `npx pod-install`
-- Run `yarn start` or `npm run start` to start the bundler.
-- Open the project in a React runtime to try it:
-  - iOS: [Client iOS](https://itunes.apple.com/app/apple-store/id982107779)
-  - Android: [Client Android](https://play.google.com/store/apps/details?id=host.exp.exponent&referrer=blankexample)
-  - Web: Any web browser
+1. Clone the repository:
 
-## Running/Modifying Native Code
+   ```bash
+   git clone https://github.com/ViktorGlogovac/InstagramClone.git
+   ```
 
-You can generate native iOS and Android projects from your Expo config file (**app.json**/ **app.config.js**) by runnning `npx expo prebuild`. These native projects can then be compiled and run via XCode and Android Studio.
+2. Navigate to the project directory:
 
-> 💡 Learn more about [native code in Expo](https://docs.expo.dev/workflow/customizing/)
+   ```bash
+   cd InstagramClone
+   ```
 
-## Publishing
+3. Install dependencies:
 
-- Deploy the native app to the App store and Play store using this guide: [Deployment](https://docs.expo.dev/distribution/app-stores/).
-- Deploy the website using this guide: [Web deployment](https://docs.expo.dev/distribution/publishing-websites/).
+   ```bash
+   npm install
+   ```
 
-## 📝 Notes
+4. Start the app:
+   ```bash
+   npm start
+   ```
 
-- Learn more about [Universal React](https://docs.expo.dev/).
-- See what API and components are [available in the React runtimes](https://docs.expo.dev/versions/latest/).
-- Find out more about developing apps and websites: [Guides](https://docs.expo.dev/guides/).
+## Usage
+
+After starting the app, open your preferred browser and navigate to `http://localhost:3000` (or the designated port).
