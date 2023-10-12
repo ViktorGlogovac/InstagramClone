@@ -1,4 +1,4 @@
-# My Universal React Project
+# Instagram Clone
 
 <p>
   <!-- iOS -->
@@ -15,9 +15,10 @@
   </a>
 </p>
 
-# Instagram Clone
 
-![Instagram Clone Logo](./IgHeaderLogo.png)
+<img src="assets/IgHeaderLogo.png" alt="Instagram Clone Logo" width="200"/>
+
+
 
 ## Table of Contents
 
