@@ -43,9 +43,45 @@ const PostFooter = ({ post }) => {
             {formatNumberWithCommas(post.likes)} likes
             </Text>
             </View>
+
+            <Caption post ={post}></Caption>
+            <CommentsSection post ={post}></CommentsSection>
+            <Comments post ={post}></Comments>
         </View>
     );
 }
+
+const Caption = ({ post }) => (
+    <View style = {{marginTop: 5, marginLeft: 10}}>
+    {!!post.comments.length && (
+        <Text style={{ color: 'white' }}>
+        <Text style={{ fontWeight: '600' }}>{post.user} </Text>
+        <Text> {post.caption}</Text>
+        </Text>
+    )}
+    </View>
+)
+
+const CommentsSection = ({post}) => (
+    <View style = {{marginTop: 5}}>
+    <Text style={{color: 'grey', marginLeft: 10}}>
+        View {post.comments.length > 1 ? 'all' : ''} {post.comments.length} {post.comments.length > 1 ? 'commnets' : 'comment'}
+    </Text>
+    </View>
+)
+
+const Comments = ({post}) => (
+    <>
+        {post.comments.map((comment, index) => (
+            <View key ={index}>
+                <Text style={{color: 'white', marginLeft: 10}}>
+                    <Text style={{ fontWeight: '600'}}>{comment.user}</Text>
+                    {' '}{comment.comment}
+                </Text>
+            </View>
+        ))}
+    </>
+)
 
 function formatNumberWithCommas(number) {
     return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");

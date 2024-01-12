@@ -28,10 +28,6 @@ export const POSTS = [
         profilePic: USERS[1].image,
         comments: [
             {
-                user: 'Lebron James',
-                comment: 'Damn',
-            },
-            {
                 user: 'Luka Doncic',
                 comment: 'Get dunked on @KingJames',
             },
