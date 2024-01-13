@@ -2,7 +2,7 @@ import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native'
 import React from 'react'
 
 {/* Header Code */}
-const Header = () => {
+const Header = ({navigation}) => {
   return (
     <View style = {styles.container}>
         <TouchableOpacity>
@@ -12,18 +12,16 @@ const Header = () => {
                 />
         </TouchableOpacity>
         <View style = {styles.iconsContainer}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.push('NewPostScreen')}>
                 <Image 
                     style={styles.icon}
                     source={
                         require('../../assets/icons8-add-image-32.png')
                     }
-                    
-
                 />
-            </TouchableOpacity>
+        </TouchableOpacity>
 
-            <TouchableOpacity>
+        <TouchableOpacity>
                 <Image 
                     style={styles.icon}
                     source={
@@ -31,7 +29,7 @@ const Header = () => {
                     }
 
                 />
-            </TouchableOpacity>
+        </TouchableOpacity>
 
             <TouchableOpacity>
                 <View style = {styles.unreadBadge}>

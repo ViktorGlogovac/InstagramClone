@@ -11,13 +11,14 @@ const uploadPostSchema = Yup.object().shape({
 })
 
 const FormikPostUploader = () => {
-  //const [thumbnailUrl, setThumbnailUrl] = useState('../../assets/icons8-upload-image.png')
+  const [thumbnailUrl, setThumbnailUrl] = useState()
   return (
     <>
     <Formik
       initialValues={{ caption: '', imageUrl: '' }}
       onSubmit={(values) => console.log(values)}
       validationSchema={uploadPostSchema}
+      validateOnMount={true}
       >
         {({ handleBlur, handleChange, handleSubmit, values, errors, isValid }) =>
           <>
@@ -26,8 +27,11 @@ const FormikPostUploader = () => {
             justifyContent: 'space-between', 
             flexDirection: 'row'
             }}>
-            <Image source={require('../../assets/icons8-upload-image.png')} style={{width: 100, height: 100}}/>
-
+            <Image
+              source={thumbnailUrl ? { uri: thumbnailUrl } : require('../../assets/icons8-upload-image.png')}
+              style={{ width: 100, height: 100 }}
+            />
+          {/* Caption Input */}
           <View style={{ flex: 1, marginLeft: 10 }}>
           <TextInput 
             style={{color: 'white', fontSize: 20}}
@@ -44,7 +48,9 @@ const FormikPostUploader = () => {
 
           <Divider width={0.2} orientation='vertical' />
 
+          {/* URL Input */}
           <TextInput 
+            onChange = {e => setThumbnailUrl(e.nativeEvent.text)}
             style={{color: 'white', fontSize: 20}}
             placeholder='Enter Image Url' 
             placeholderTextColor='gray'
@@ -57,6 +63,8 @@ const FormikPostUploader = () => {
               {errors.imageUrl}
             </Text>
           )}
+
+          <Button onPress={handleSubmit} title='Share' disabled={!isValid}/>
           </>
         }
       </Formik>
