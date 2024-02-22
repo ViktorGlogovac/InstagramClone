@@ -3,11 +3,12 @@ import React from 'react';
 import { TouchableOpacity } from 'react-native';
 import FormikPostUploader from './FormikPostUploader';
 
+
 const AddNewPost = ({navigation}) => {
   return (
     <View style={styles.container}>
       <Header navigation={navigation}/>
-      <FormikPostUploader />
+      <FormikPostUploader navigation = {navigation}/>
     </View>
   );
 };

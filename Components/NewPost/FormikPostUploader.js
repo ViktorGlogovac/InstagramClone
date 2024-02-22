@@ -4,19 +4,24 @@ import * as Yup from 'yup'
 import { Formik } from 'formik'
 import { Divider } from 'react-native-elements/dist/divider/Divider';
 import { Button } from 'react-native-elements';
+import validUrl from 'valid-url'
 
 const uploadPostSchema = Yup.object().shape({
   imageUrl: Yup.string().url().required('A URL is required'),
   caption: Yup.string().max(2200, 'Caption has reached the character limit')
 })
 
-const FormikPostUploader = () => {
+const FormikPostUploader = ({ navigation}) => {
   const [thumbnailUrl, setThumbnailUrl] = useState()
   return (
     <>
     <Formik
       initialValues={{ caption: '', imageUrl: '' }}
-      onSubmit={(values) => console.log(values)}
+      onSubmit={(values) => {
+        console.log(values)
+        console.log('Your post was submitted successfully')
+        navigation.goBack();
+      }}
       validationSchema={uploadPostSchema}
       validateOnMount={true}
       >
@@ -28,7 +33,7 @@ const FormikPostUploader = () => {
             flexDirection: 'row'
             }}>
             <Image
-              source={thumbnailUrl ? { uri: thumbnailUrl } : require('../../assets/icons8-upload-image.png')}
+              source={validUrl.isUri(thumbnailUrl) ? { uri: thumbnailUrl } : require('../../assets/icons8-upload-image.png')}
               style={{ width: 100, height: 100 }}
             />
           {/* Caption Input */}
