@@ -1,9 +1,6 @@
-//import HomeScreen from "./Screens/HomeScreen";
+// Removed unused imports for clarity
 import * as React from 'react';
-import NewPostScreen from "./Screens/NewPostScreen";
-import * as Yup from 'yup';
-import { useFormik } from 'formik';
-import SignedInStack from './Screens/Navigation';
+import SignedInStack from './Navigation';
 
 export default function App() {
   return (

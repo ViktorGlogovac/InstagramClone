@@ -1,9 +1,10 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet } from 'react-native';
-import LoginForm from '../Components/LoginScreen/LoginForm';
+import SignupForm from '../Components/SignupScreen/SignupForm';
 
 
-const LoginScreen = ({navigation}) => (
+
+const SignupScreen = ({navigation}) => (
     <View style={styles.container}>
         <View style={styles.logoContainer}>
             <Image 
@@ -12,8 +13,8 @@ const LoginScreen = ({navigation}) => (
             />
         </View>
 
-        {/* Login Form */}
-        <LoginForm navigation={navigation}/>
+        {/* Signup Form */}
+        <SignupForm navigation={navigation}/>
     </View>
 );
 
@@ -30,4 +31,4 @@ const styles = StyleSheet.create({
     },
   });
 
-export default LoginScreen;
+export default SignupScreen;
